@@ -36,6 +36,11 @@ void countingSort(int*& A, int*& B, int najmanjseStevilo, int najvecjeStevilo, i
 void romanSort(int*& A, int*& B, int najmanjseStevilo, int najvecjeStevilo, int trenutnaVelikost){
     int velikostC = najvecjeStevilo - najmanjseStevilo + 1;
 
+    //podpora negativnim
+	for (int i = 0; i < trenutnaVelikost; i++) {
+		A[i] = A[i] - najmanjseStevilo;
+	}
+
 	int* C = new int[velikostC];
 	for (int i = 0; i < velikostC; i++) {
 		C[i] = 0;
