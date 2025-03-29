@@ -8,7 +8,12 @@ void romanSort(int*& A, int*& B, int najmanjseStevilo, int najvecjeStevilo, int 
 
 bool Branje_Stevil(int*& A, const char s[], int& velikost, int& najmanjseStevilo, int& najvecjeStevilo){}
 
-void Izpis_Stevil(int* polje, unsigned int velikost){}
+void Izpis_Stevil(int* polje, unsigned int velikost){
+    ofstream output("out.txt");
+
+	for (int i = 0; i < velikost; i++)
+		output << polje[i] << ' ';
+}
 
 int main(int argc, const char* argv[]){
 
