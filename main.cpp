@@ -33,7 +33,33 @@ void countingSort(int*& A, int*& B, int najmanjseStevilo, int najvecjeStevilo, i
 	delete[] C;
 }
 
-void romanSort(int*& A, int*& B, int najmanjseStevilo, int najvecjeStevilo, int trenutnaVelikost){}
+void romanSort(int*& A, int*& B, int najmanjseStevilo, int najvecjeStevilo, int trenutnaVelikost){
+    int velikostC = najvecjeStevilo - najmanjseStevilo + 1;
+
+	int* C = new int[velikostC];
+	for (int i = 0; i < velikostC; i++) {
+		C[i] = 0;
+	}
+
+	for (int i = 0; i < trenutnaVelikost; i++) {
+		C[A[i]] = C[A[i]] + 1;
+	}
+
+	B = new int[velikostC];
+
+	int trenutniB = 0;
+	for (int i = 0; i < velikostC; i++) {
+		while (C[i] > 0) {
+			if (trenutniB < velikostC) {
+				B[trenutniB] = i + najmanjseStevilo;
+				trenutniB++;
+				C[i]--;
+			}
+		}
+	}
+
+	delete[] C;
+}
 
 bool Branje_Stevil(int*& A, const char s[], int& velikost, int& najmanjseStevilo, int& najvecjeStevilo){}
 
